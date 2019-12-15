@@ -20,6 +20,7 @@ import java.util.Optional;
 
 @Service
 public class RateServiceImpl implements RateService {
+
     private static final Logger log = LoggerFactory.getLogger(RateServiceImpl.class);
 
     @Autowired
@@ -50,4 +51,5 @@ public class RateServiceImpl implements RateService {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
 }

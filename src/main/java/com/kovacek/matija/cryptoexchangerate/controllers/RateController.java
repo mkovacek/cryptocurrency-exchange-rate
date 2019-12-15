@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/cryptocurrency/rate")
 public class RateController {
+
     @Autowired
     private RateService rateService;
 
@@ -24,4 +25,5 @@ public class RateController {
     public ResponseEntity<List<RateModel>> getHistoricalRate(@PathVariable("currencyCode") String currencyCode, @RequestParam String startDate, @RequestParam String endDate) {
         return rateService.getHistoricalRate(currencyCode, startDate, endDate);
     }
+
 }

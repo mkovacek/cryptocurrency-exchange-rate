@@ -9,9 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RateRepository extends CrudRepository<RateModel, Long> {
+
     List<RateModel> findByCryptoCurrencyAndDateGreaterThanEqualAndDateLessThanEqual(CryptoCurrencyModel cryptoCurrencyModel, Date startDate, Date endDate);
 
     Optional<RateModel> findByCryptoCurrencyAndDate(CryptoCurrencyModel cryptoCurrencyModel, Date date);
 
     RateModel findTopByCryptoCurrencyOrderByIdDesc(CryptoCurrencyModel cryptoCurrencyModel);
+
 }

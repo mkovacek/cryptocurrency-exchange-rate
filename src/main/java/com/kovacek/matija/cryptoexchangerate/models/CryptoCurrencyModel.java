@@ -5,6 +5,7 @@ import java.util.List;
 
 @Entity
 public class CryptoCurrencyModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -49,4 +50,5 @@ public class CryptoCurrencyModel {
     public List<RateModel> getRate() {
         return this.rate;
     }
+
 }

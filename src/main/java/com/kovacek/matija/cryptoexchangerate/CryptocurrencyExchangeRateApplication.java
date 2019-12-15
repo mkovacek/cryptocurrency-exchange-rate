@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 public class CryptocurrencyExchangeRateApplication implements CommandLineRunner {
+
     @Autowired
     private ImportService importService;
 
@@ -22,4 +23,5 @@ public class CryptocurrencyExchangeRateApplication implements CommandLineRunner 
         importService.importCryptoCurrency("BTC", "Bitcoin");
         importService.importHistoricalSampleData("BTC");
     }
+
 }
