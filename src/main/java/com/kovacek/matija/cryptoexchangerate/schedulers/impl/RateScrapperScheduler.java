@@ -34,7 +34,7 @@ public class RateScrapperScheduler implements RateImport {
     private RateRepository rateRepository;
 
     @Override
-    @Scheduled(fixedRateString = "${checkPeriod}")
+    @Scheduled(cron = "${checkPeriod}")
     public void saveLatestPrice() {
         try {
             Document document = Jsoup.connect(StringUtils.join(URL, "/bitcoin")).get();
