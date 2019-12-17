@@ -46,12 +46,14 @@ Test: mvn clean test
 
 ### Why like this (my approach to the task)
 
+After reading the task first thing that I have on my mind was this should work for other cryptocurrencies as well or be easy resuable / extendable. Based on your estimation for this task I was planning how deep I should go with implementation, reusability and perfection.
+
 Regarding technologies I decided to use what is on your tech radar list so Spring boot 2 and Java 11. Database (H2) is not appropiate and I have use it just for simplicity of running and testing this application (even though I could prepare some docker to run more appropiate database). 
 
-For collecting latest cryptocurrency price I have decide to use scrapping library beacuse I thought that you use that kind of approach in daily business.
+For collecting latest cryptocurrency price I have decide to use scrapping library beacuse I thought that you use that kind of approach in your daily business when you are collecting usefull informations for your products and customers.
 
 For easier testing of historical rate API endpoint I have decided to import some sample data using by other exchange rate service.
 
-Requierment was only for BTC and USD but during implementation I had on my mind that this should be easy reusable / extendable  for other cryptocurrencies and exchange rates (eth, xrp, euros, ...)
+Requirement was only for BTC and USD but during implementation I had on my mind that this should be easy reusable / extendable  for other cryptocurrencies and exchange rates (eth, xrp, euros, ...)
 
 Even though code is not perfect or there are some code smells/bugs, my focus was to prove Java skills, code organization and structuring. For real production ready that kind of service it would need a lot of more things to be considered and implemented.
