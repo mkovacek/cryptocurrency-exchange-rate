@@ -81,7 +81,7 @@ class RateControllerTest {
     }
 
     @Test
-    @DisplayName("Given currency code and not valud start and end date when historical rate is requested then API should return empty array")
+    @DisplayName("Given currency code and not valid start and end date when historical rate is requested then API should return empty array")
     void getHistoricalRateForSupportedCurrencyAndNotValidDate() throws Exception {
         given(rateService.getHistoricalRate("btc", "2020-12-08", "2020-12-09")).willReturn(new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK));
 
