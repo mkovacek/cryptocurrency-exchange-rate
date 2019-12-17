@@ -22,7 +22,7 @@ In background Scheduler is scrapping bitcoin rate and stores rate in database.
 Cron expression can be configurable in application properties.
 Using API endpoints you can get latest bitcoin rate and historical rates from database.
 
-Class diagram
+![system diagram](https://i.ibb.co/pRtH405/diagram.jpg)
 
 ![class diagram](https://i.ibb.co/mcYJmSX/Screenshot-2019-12-17-at-17-46-10.png)
 
