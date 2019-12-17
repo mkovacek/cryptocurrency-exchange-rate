@@ -30,4 +30,4 @@ Test: mvn clean test
 ### Technologies
 Spring boot, Java 11, H2 database
 
-![class diagram](https://ibb.co/LZqSMvJ)
+![class diagram](https://i.ibb.co/mcYJmSX/Screenshot-2019-12-17-at-17-46-10.png)
