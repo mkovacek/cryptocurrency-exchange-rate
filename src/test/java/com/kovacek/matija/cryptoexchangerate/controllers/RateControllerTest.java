@@ -65,8 +65,9 @@ class RateControllerTest {
     @Test
     @DisplayName("Given currency code, start and end date when historical rate is requested then API should return historical rate")
     void getHistoricalRateForSupportedCurrency() throws Exception {
-        RateModel rateModel = new RateModel(getDate("2019-12-08"), getBtc(), "6.869,19");
-        RateModel rateModel2 = new RateModel(getDate("2019-12-09"), getBtc(), "6.923,23");
+        CryptoCurrencyModel cryptoCurrencyModel = getBtc();
+        RateModel rateModel = new RateModel(getDate("2019-12-08"), cryptoCurrencyModel, "6.869,19");
+        RateModel rateModel2 = new RateModel(getDate("2019-12-09"), cryptoCurrencyModel, "6.923,23");
 
         List<RateModel> rateModels = List.of(rateModel, rateModel2);
 
