@@ -44,7 +44,7 @@ Run: mvn spring-boot:run
 
 Test: mvn clean test
 
-### Why like this (my approach to the task)
+### Why like this (approach to the task)
 
 After reading the task first thing that I have on my mind was this should work for other cryptocurrencies as well or be easy resuable / extendable. Based on your estimation for this task I was planning how deep I should go with implementation, reusability and perfection.
 
