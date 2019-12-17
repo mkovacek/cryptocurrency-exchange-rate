@@ -30,19 +30,19 @@ public class RateServiceImpl implements RateService {
     private RateRepository rateRepository;
 
     @Override
-    public ResponseEntity<RateModel> getLatestRate(String currencyName) {
-        Optional<CryptoCurrencyModel> cryptoCurrencyModel = cryptoCurrencyRepository.findByCodeIgnoreCase(currencyName);
+    public ResponseEntity<RateModel> getLatestRate(String currencyCode) {
+        Optional<CryptoCurrencyModel> cryptoCurrencyModel = cryptoCurrencyRepository.findByCodeIgnoreCase(currencyCode);
         return cryptoCurrencyModel
                 .map(cryptoCurrency -> new ResponseEntity<>(rateRepository.findTopByCryptoCurrencyOrderByIdDesc(cryptoCurrency), HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.BAD_REQUEST));
     }
 
     @Override
-    public ResponseEntity<List<RateModel>> getHistoricalRate(String currencyName, String startDate, String endDate) {
+    public ResponseEntity<List<RateModel>> getHistoricalRate(String currencyCode, String startDate, String endDate) {
         try {
             Date start = new SimpleDateFormat("yyyy-MM-dd").parse(startDate);
             Date end = new SimpleDateFormat("yyyy-MM-dd").parse(endDate);
-            Optional<CryptoCurrencyModel> cryptoCurrencyModel = cryptoCurrencyRepository.findByCodeIgnoreCase(currencyName);
+            Optional<CryptoCurrencyModel> cryptoCurrencyModel = cryptoCurrencyRepository.findByCodeIgnoreCase(currencyCode);
             return cryptoCurrencyModel
                     .map(cryptoCurrency -> new ResponseEntity<>(rateRepository.findByCryptoCurrencyAndDateGreaterThanEqualAndDateLessThanEqual(cryptoCurrency, start, end), HttpStatus.OK))
                     .orElse(new ResponseEntity<>(HttpStatus.BAD_REQUEST));
