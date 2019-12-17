@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface RateService {
 
-    ResponseEntity<RateModel> getLatestRate(String currencyName);
+    ResponseEntity<RateModel> getLatestRate(String currencyCode);
 
-    ResponseEntity<List<RateModel>> getHistoricalRate(String currencyName, String startDate, String endDate);
+    ResponseEntity<List<RateModel>> getHistoricalRate(String currencyCode, String startDate, String endDate);
 
 }
